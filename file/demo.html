@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function handle() {
+      //获得表单对象
+      let form = document.querySelector('input');
+
+      let formDate = new FormData(form);
+      document.querySelector('input').onchange = function(event) {
+        console.log(form['files'][0]);
+        let ajax = new XMLHttpRequest();
+        ajax.onload = function() {
+          console.log(ajax.responseText);
+        }
+        ajax.open('post', 'file.php', true);
+        ajax.send(formDate);
+      }
+    }
+    window.addEventListener('DOMContentLoaded', handle);
+  </script>
+</head>
+
+<body>
+  <form action="file.php" method="post" enctype="multipart/form-data">
+    <!-- <textarea rows="20" cols="100" name="text"></textarea> -->
+    <input type="file" name="file" value="">
+    <button type="submit">submit</button>
+  </form>
+</body>
+
+</html>
