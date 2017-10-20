@@ -11,9 +11,10 @@
       //获得表单对象
       let form = document.querySelector('input');
 
-      let formDate = new FormData(form);
+      let formDate = new FormData();
       document.querySelector('input').onchange = function(event) {
         console.log(form['files'][0]);
+        formDate.append('text', form['files'][0]);
         let ajax = new XMLHttpRequest();
         ajax.onload = function() {
           console.log(ajax.responseText);
