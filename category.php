@@ -1,4 +1,5 @@
 <?PHP
+session_start();
 $address = array(
     array('id'=>1  , 'address'=>'安徽' , 'parent_id' => 0),
     array('id'=>2  , 'address'=>'江苏' , 'parent_id' => 0),
@@ -48,5 +49,6 @@ function getTree($data,$id,$level){
   }
   return $output;
 }
-$arr=getTree($address,0,0);
-var_dump($arr);
+// $arr=getTree($address,0,0);
+// var_dump($arr);
+echo $_SESSION['name'];

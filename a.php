@@ -1,4 +1,5 @@
 <?php
+session_start();
 // echo is_integer(false);//结果为false则不显示
 if(extension_loaded('gd')){
   echo "you can use gd<br />";
@@ -9,3 +10,5 @@ if(extension_loaded('gd')){
 }else {
     echo "no gd extension";
   }
+$_SESSION['name']='zhansgan';
+echo $_SESSION['name'];
