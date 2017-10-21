@@ -12,3 +12,8 @@ if(extension_loaded('gd')){
   }
 $_SESSION['name']='zhansgan';
 echo $_SESSION['name'];
+for($i=1;$i<3;$i++){
+$a=1;
+  echo ++$a.'1<br />';
+}
+echo $a;
