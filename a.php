@@ -16,4 +16,7 @@ for($i=1;$i<3;$i++){
 $a=1;
   echo ++$a.'1<br />';
 }
-echo $a;
+// echo $a;
+// echo md5('a').'<br />';
+// echo md5('a');
+phpinfo();
